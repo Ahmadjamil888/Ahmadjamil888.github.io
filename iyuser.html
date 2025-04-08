@@ -1194,5 +1194,319 @@
   <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="V3Wyzqletp-hjR52zu5ve";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
+  <script>
+    // Create professional dark loading screen with orange/green theme
+document.addEventListener('DOMContentLoaded', function() {
+  // Create loading screen container
+  const loader = document.createElement('div');
+  loader.id = 'pro-loader';
+  
+  // Create dark backdrop with subtle grid
+  const backdrop = document.createElement('div');
+  backdrop.className = 'backdrop';
+  
+  // Create loader content container
+  const loaderContent = document.createElement('div');
+  loaderContent.className = 'loader-content';
+  
+  // Create modern hexagon logo
+  const logo = document.createElement('div');
+  logo.className = 'loader-logo';
+  logo.innerHTML = `
+    <svg viewBox="0 0 200 200" aria-hidden="true">
+      <defs>
+        <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#FF7B29" />
+          <stop offset="100%" stop-color="#2EE6D6" />
+        </linearGradient>
+        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+      </defs>
+      <path d="M100 20 L180 50 L180 150 L100 180 L20 150 L20 50 Z" 
+            fill="url(#logo-gradient)" filter="url(#glow)" />
+    </svg>
+  `;
+  
+  // Create progress container
+  const progressContainer = document.createElement('div');
+  progressContainer.className = 'progress-container';
+  
+  // Create sleek progress track
+  const progressTrack = document.createElement('div');
+  progressTrack.className = 'progress-track';
+  
+  // Create gradient progress fill
+  const progressFill = document.createElement('div');
+  progressFill.className = 'progress-fill';
+  
+  // Create percentage counter
+  const percentage = document.createElement('div');
+  percentage.className = 'percentage';
+  percentage.textContent = '0%';
+  
+  // Create status text
+  const statusText = document.createElement('div');
+  statusText.className = 'status-text';
+  statusText.textContent = 'Initializing...';
+  
+  // Create decorative corner elements
+  const cornerTL = document.createElement('div');
+  cornerTL.className = 'corner corner-tl';
+  const cornerTR = document.createElement('div');
+  cornerTR.className = 'corner corner-tr';
+  const cornerBL = document.createElement('div');
+  cornerBL.className = 'corner corner-bl';
+  const cornerBR = document.createElement('div');
+  cornerBR.className = 'corner corner-br';
+  
+  // Assemble elements
+  progressTrack.appendChild(progressFill);
+  progressContainer.appendChild(progressTrack);
+  progressContainer.appendChild(percentage);
+  
+  loaderContent.appendChild(cornerTL);
+  loaderContent.appendChild(cornerTR);
+  loaderContent.appendChild(logo);
+  loaderContent.appendChild(statusText);
+  loaderContent.appendChild(progressContainer);
+  loaderContent.appendChild(cornerBL);
+  loaderContent.appendChild(cornerBR);
+  
+  loader.appendChild(backdrop);
+  loader.appendChild(loaderContent);
+  
+  // Add to body (as first element)
+  document.body.insertBefore(loader, document.body.firstChild);
+  
+  // Create and append styles dynamically
+  const style = document.createElement('style');
+  style.textContent = `
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+    
+    #pro-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .backdrop {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #0D1117;
+      background-image: 
+        linear-gradient(rgba(255, 123, 41, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 123, 41, 0.05) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    
+    .loader-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+      padding: 40px;
+      border-radius: 8px;
+    }
+    
+    .loader-logo {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 30px;
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    .loader-logo svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    .status-text {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+    
+    .progress-container {
+      width: 100%;
+      position: relative;
+      margin-top: 30px;
+    }
+    
+    .progress-track {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #FF7B29, #2EE6D6);
+      border-radius: 3px;
+      transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .progress-fill::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: shine 2s infinite;
+    }
+    
+    .percentage {
+      position: absolute;
+      right: 0;
+      top: -25px;
+      font-size: 0.85rem;
+      color: #2EE6D6;
+      font-weight: 500;
+    }
+    
+    .corner {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-style: solid;
+      border-color: rgba(255, 123, 41, 0.3);
+      border-width: 0;
+    }
+    
+    .corner-tl {
+      top: 0;
+      left: 0;
+      border-top-width: 2px;
+      border-left-width: 2px;
+      border-radius: 8px 0 0 0;
+    }
+    
+    .corner-tr {
+      top: 0;
+      right: 0;
+      border-top-width: 2px;
+      border-right-width: 2px;
+      border-radius: 0 8px 0 0;
+    }
+    
+    .corner-bl {
+      bottom: 0;
+      left: 0;
+      border-bottom-width: 2px;
+      border-left-width: 2px;
+      border-radius: 0 0 0 8px;
+    }
+    
+    .corner-br {
+      bottom: 0;
+      right: 0;
+      border-bottom-width: 2px;
+      border-right-width: 2px;
+      border-radius: 0 0 8px 0;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+  `;
+  document.head.appendChild(style);
+  
+  // Simulate loading progress
+  let progress = 0;
+  const statusMessages = [
+    { percent: 0, text: "Initializing systems..." },
+    { percent: 15, text: "Loading modules..." },
+    { percent: 30, text: "Authenticating..." },
+    { percent: 45, text: "Processing data..." },
+    { percent: 60, text: "Optimizing performance..." },
+    { percent: 75, text: "Finalizing setup..." },
+    { percent: 90, text: "Almost ready..." },
+    { percent: 100, text: "Launching interface" }
+  ];
+  
+  const loadingInterval = setInterval(() => {
+    // Increment progress with easing
+    progress += Math.random() * 4;
+    if (progress > 100) progress = 100;
+    
+    // Update progress bar
+    progressFill.style.width = `${progress}%`;
+    percentage.textContent = `${Math.floor(progress)}%`;
+    
+    // Update status text at intervals
+    statusMessages.forEach(msg => {
+      if (Math.floor(progress) === msg.percent) {
+        statusText.style.opacity = 0;
+        setTimeout(() => {
+          statusText.textContent = msg.text;
+          statusText.style.opacity = 1;
+        }, 200);
+      }
+    });
+    
+    // When complete
+    if (progress === 100) {
+      clearInterval(loadingInterval);
+      
+      // Add completion animation
+      loaderContent.style.transform = "translateY(-10px)";
+      loaderContent.style.opacity = "0.9";
+      
+      setTimeout(() => {
+        // Fade out loader
+        loader.style.opacity = '0';
+        loader.style.transform = 'scale(0.98)';
+        
+        // Remove loader after fade out
+        setTimeout(() => {
+          loader.remove();
+          style.remove();
+          
+          // Dispatch custom event when loader is done
+          document.dispatchEvent(new CustomEvent('loadingComplete', {
+            detail: { loadTime: performance.now() }
+          }));
+        }, 600);
+      }, 800);
+    }
+  }, 100);
+});
+
+// Usage:
+document.addEventListener('loadingComplete', function(e) {
+  console.log(`Loading complete in ${(e.detail.loadTime/1000).toFixed(2)}s`);
+  // Initialize your main content here
+});
+  </script>
 </body>
 </html>
