@@ -66,10 +66,8 @@ To truly experience my style, explore the **interactive demo** below! Each proje
 
 ## 📬 **Let’s Connect**
 
-- **Email**: ahmad@example.com
-- **LinkedIn**: [linkedin.com/in/ahmadjamil](#)
-- **GitHub**: [github.com/ahmadjamil](#)
-- **Twitter**: [@ahmadjamil](#)
+- **Email**: shazabjamildhami@gmail.com
+- **GitHub**: [github.com/ahmadjamil888](#)
   
 > Let’s build the future together. **Reach out if you need innovative AI solutions, web designs, or just want to talk about how tech can change the world.**
 
@@ -83,7 +81,8 @@ To truly experience my style, explore the **interactive demo** below! Each proje
 ---
 
 ## 📑 **Visuals**
-![Ahmad Jamil - AI Innovator](assets/profile.jpg)
+![Ahmad Jamil - AI Innovator](![WIN_20250404_00_40_24_Pro](https://github.com/user-attachments/assets/b3e27326-e113-4c86-abfe-53b160124875)
+)
 
 > *A snapshot of my journey to creating the world of tomorrow.*
 
